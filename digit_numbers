@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	long long n;
+	cout << "Enter any number" << endl;
+	cin >> n;
+	int f;
+	while (true)
+	{
+		cout << "Enter the digit that what you want to change" << endl;
+		cin >> f;
+		if (f > 0 && f < 9) break;
+		cout << "error" << endl;
+	}
+	int c;
+	while (true)
+	{
+		cout << "Enter the digit on what you want to change" << endl;
+		cin >> c;
+		if (c > 0 && c < 9) break;
+		cout << "error" << endl;
+	}
+	int t = n;
+	int a;
+	long long p = 0;
+	while (t)
+	{
+		a = t % 10;
+		t = t / 10;
+		if (a == f)
+			a = c;
+		p = p * 10 + a;
+	}
+	while (p)
+	{
+		a = p % 10;
+		p = p / 10;
+		t = t * 10 + a;
+	}
+	cout << t << endl;
+
+
+	system("pause");
+	return 0;
+
+}
